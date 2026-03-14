@@ -8,7 +8,9 @@
 // destructuring ----
 
 const {Sequelize,DataTypes} = require("sequelize")
- const sequelize = new Sequelize("postgresql://postgres.coychfigfotbkjqbrqxy:meropailodatabase@aws-1-ap-south-1.pooler.supabase.com:6543/postgres")
+
+
+ const sequelize = new Sequelize(process.env.CS)
 
  sequelize.authenticate()
  .then (()=>{
@@ -18,8 +20,8 @@ const {Sequelize,DataTypes} = require("sequelize")
     console.log("Error aayo", err)
  })
 
-const db = {}
-db.Sequelize = Sequelize
-db.sequelize = sequelize
+// const db = {}
+// db.Sequelize = Sequelize
+// db.sequelize = sequelize
 
-module.exports = db
+// module.exports = db
