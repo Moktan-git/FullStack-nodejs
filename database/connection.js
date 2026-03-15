@@ -7,19 +7,27 @@
 //  same thing using express
 const {Sequelize,DataTypes} = require("sequelize")
 
+// const bookModel = require("./models/book.model")
 
- const sequelize = new Sequelize(process.env.CS)
+ const sequelize = new Sequelize("postgresql://postgres.coychfigfotbkjqbrqxy:meropailodatabase@aws-1-ap-south-1.pooler.supabase.com:6543/postgres")
 
  sequelize.authenticate()
  .then (()=>{
     console.log(" authenticated vayo !!")
  })
  .catch((err)=>{
-    console.log("Error aayo", err)
+    console.log("Error aayo" + err)
  })
 
 const db = {}
 db.Sequelize = Sequelize
 db.sequelize = sequelize
 
-module.exports = db
+// db.books = require("./models/book.model")(sequelize,DataTypes)
+
+// Migrate ko laagi hamile code lekhxam
+// sequelize.sync({force : false}).then(()=>{
+//    console.log("Migrate vayo hai")
+// });
+
+module.exports = db;

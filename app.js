@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 
-require("./database/connection")
+require("./database/connection");
 
 
 app.get("/books",function(req,res){
@@ -24,8 +24,6 @@ app.delete("/books/:id",function(req,res){
         messsage: "Book Deleted SuccessFully"
     })
 })
-
-
 
 
 
