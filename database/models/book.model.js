@@ -3,22 +3,22 @@
 const bookModel = (sequelize,DataTypes)=>{
     const Book = sequelize.define("book",{
         bookName: {
-            types: DataTypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false
         },
         bookPrice: {
-            types: DataTypes.FLOAT,
+            type: DataTypes.FLOAT,
             allowNull: false
         },
           bookAuthor: {
-            types: DataTypes.STRING,
+            type: DataTypes.STRING,
       
         },
           bookGenre: {
-            types: DataTypes.STRING
+            type: DataTypes.STRING
         },
         bookDescription: {
-            types : DataTypes.TEXT
+            type: DataTypes.TEXT
         }
     })
     return Book;
