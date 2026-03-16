@@ -23,7 +23,7 @@ db.Sequelize = Sequelize
 db.sequelize = sequelize
 
 db.books = require("./models/book.model")(sequelize,DataTypes)
-db.products = require("./models/product-model")(sequelize,DataTypes)
+
 
 // Migrate ko laagi hamile code lekhxam
 sequelize.sync({alter : false}).then(()=>{
