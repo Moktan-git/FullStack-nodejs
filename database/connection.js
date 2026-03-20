@@ -8,7 +8,7 @@
 const {Sequelize,DataTypes} = require("sequelize")
 
 
- const sequelize = new Sequelize("postgresql://postgres.coychfigfotbkjqbrqxy:meropailodatabase@aws-1-ap-south-1.pooler.supabase.com:6543/postgres")
+ const sequelize = new Sequelize("postgresql://postgres.kmipmwlbkpjdnzeuquvz:meropailodatabase@aws-1-ap-south-1.pooler.supabase.com:6543/postgres")
 
  sequelize.authenticate()
  .then (()=>{

@@ -35,20 +35,48 @@ await books.create({
 }
 
 
-exports.deleteBooks = function(req,res){
-    // logic code goes here
+exports.deleteBooks = async function(req,res){
+    // first ma kun book delete garne vanera id capture garne
+    // id paisakepaxi tyo id ko book chai book table baata delete garni..
+    const id = req.params.id;
+    //const {id} = req.body // const {id} = req.params  --destructuring gareko
+    await books.destroy({
+        where : {
+            id
+        }
+    
+    })
+    // id capture garepachi delete garne logic code lekhne 
 
     res.json({
         messsage: "Book Deleted SuccessFully"
     })
 }
 
-exports.editBooks = function(req,res){
+exports.editBooks = async function(req,res){
+    try {
     // logic code goes here
-
+//      first ma kun book edit garne vanera id capture garne
+    const id = req.params.id;
+    const {bookName,bookPrice, bookAuthor, bookGenre} = req.body;
+    // id capture garepachi edit garne logic code lekhne 
+   await books.update({
+        bookName,
+        bookPrice,
+        bookAuthor,
+        bookGenre
+    },{
+        where : {
+            id
+        }
+    })
     res.json({
         messsage: "Book Updated SuccessFully"
-    })
+    })} catch(error){
+        res.json({
+            message: "Error aayo"
+        })
+    }
 }
 
 exports.singleFetchBooks = async function(req,res){
