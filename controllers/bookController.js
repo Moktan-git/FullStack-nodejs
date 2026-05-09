@@ -8,7 +8,7 @@ exports.fetchBooks = async function(req,res){
     const datas = await books.findAll() //slect * from books--querry ma books.find()--> mongoose ma 
 
     res.json({
-        messsage: "Book Fetched SuccessFully",
+        message: "Book Fetched SuccessFully",
         datas  // js ma key ra value same vaye-- datas matra lekhda hunxa
     })
 }
