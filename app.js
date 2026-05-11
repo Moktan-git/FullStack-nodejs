@@ -6,7 +6,7 @@ const cors = require("cors")
 const app = express() // express lai trigger gareko or call
 require("./database/connection");
 app.use(cors({
-    origin : "http://localhost:5173"
+    origin : "http://localhost:5173" // frontend ko url ho yo-- frontend le chai backend sanga communicate garna milos vanera cors use gareko xa
 }))
 app.use(express.json())
 
